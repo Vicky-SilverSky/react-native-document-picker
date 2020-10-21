@@ -100,8 +100,8 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 		this.promise = promise;
 
 		try {
-// 			Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-			Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+// 			Intent intent = new Intent(Intent.ACTION_GET_CONTENT);		// will show gdrive, onedrivek, etc..
+			Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);	// will show picker only for local files..
 			intent.addCategory(Intent.CATEGORY_OPENABLE);
 
 			intent.setType("*/*");
