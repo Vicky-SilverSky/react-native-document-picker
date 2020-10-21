@@ -126,7 +126,7 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 			if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
 				intent = Intent.createChooser(intent, null);
 			}
-
+			intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
 			currentActivity.startActivityForResult(intent, READ_REQUEST_CODE, Bundle.EMPTY);
 		} catch (ActivityNotFoundException e) {
 			this.promise.reject(E_UNABLE_TO_OPEN_FILE_TYPE, e.getLocalizedMessage());
